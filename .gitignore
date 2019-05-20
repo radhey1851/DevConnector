@@ -1,4 +1,10 @@
-/node-modules
+
 # dependencies
 node_modules/
 /node_modules
+
+# keys
+config/default.json
+
+#misc
+/devconnector_html_theme
