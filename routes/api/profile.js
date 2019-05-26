@@ -1,7 +1,10 @@
 const express = require('express');
 const auth = require('../../middleware/auth');
+
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
+const Post = require('../../models/Post');
+
 const { check, validationResult } = require('express-validator/check');
 const request = require('request');
 const config = require('config');
@@ -152,6 +155,7 @@ router.post(
 router.delete('/', auth, async (req, res) => {
   try {
     // @todo - remove posts later
+    await Post.deleteMany({ user: req.user });
     // Removes Profile and user
     await Profile.findOneAndRemove({ user: req.user.id });
     await User.findByIdAndRemove({ _id: req.user.id });
