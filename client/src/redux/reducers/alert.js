@@ -4,7 +4,7 @@ import { SET_ALERT, REMOVE_ALERT } from '../actions/types';
  ** {
  **  id : 1,
  **  msg: 'Example alter',
- **  type: 'success/failure' etc
+ **  alterType: 'success/failure' etc
  ** }
  */
 const initialState = [];
@@ -15,7 +15,7 @@ export default function(state = initialState, action) {
       return [...state, action.payload];
     }
     case REMOVE_ALERT: {
-      return state.filter(alert => alert !== action.payload);
+      return state.filter(alert => alert.id !== action.payload.id);
     }
 
     default:

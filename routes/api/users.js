@@ -10,7 +10,7 @@ const User = require('../../models/User');
 const router = express.Router();
 
 // @route POST api/users
-// @desc  Register User
+// @desc  Register User and return token
 // @access Public
 router.post(
   '/',
