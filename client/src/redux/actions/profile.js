@@ -12,6 +12,7 @@ import {
 
 //  Get all profiles
 export const getProfiles = () => async dispatch => {
+  //dispatch({ type: CLEAR_PROFILE }); Is messing when loading profiles with authenticated users
   dispatch({ type: CLEAR_PROFILE });
   try {
     const res = await axios.get('/api/profile');
@@ -30,7 +31,7 @@ export const getProfiles = () => async dispatch => {
 //  Get Profile by Id
 export const getProfileById = userId => async dispatch => {
   try {
-    const res = await axios.get(`/api/profile/users/${userId}`);
+    const res = await axios.get(`/api/profile/user/${userId}`);
     dispatch({
       type: GET_PROFILE,
       payload: res.data
