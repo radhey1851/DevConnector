@@ -1,6 +1,6 @@
 import { SET_ALERT, REMOVE_ALERT } from '../actions/types';
 
-/* the state template for alerts is an array of alterts like
+/* the state template for alerts is an array of alters like
  ** {
  **  id : 1,
  **  msg: 'Example alter',
